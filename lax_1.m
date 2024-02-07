@@ -5,7 +5,7 @@ lambda = 0.8;
 x_data_1 = linspace(-1, 1, 201);
 x_data_2 = linspace(-1, 1, 5001);
 for i = 1:201
-    if (abs(delta_x*i - 1.01) > (1/3))
+    if (abs(delta_x*i - 1.01) < (1/3))
         M(1, i) = 1;
     end
 end
@@ -21,7 +21,7 @@ M
 N = zeros(501, 5001);
 
 for i = 1:5001
-    if (abs((2/5000)*i -2501/2500)> (1/3))
+    if (abs((2/5000)*i -2501/2500)< (1/3))
         N(1, i) = 1;
     end
 end
