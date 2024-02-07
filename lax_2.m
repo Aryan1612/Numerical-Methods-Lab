@@ -14,9 +14,9 @@ end
 
 for row = 2:38
     for col = 2:200
-        M(row, col) = 0.5*(M(row-1, col+1) + M(row-1, col-1))*(1-0.04*(M(row-1, col+1)-M(row-1, col-1)));
+        M(row, col) = 0.5*(M(row-1, col+1) + M(row-1, col-1))*(1-0.4*0.5*(M(row-1, col+1)-M(row-1, col-1)));
     end
-    M(row, 1) = 0.5*(M(row-1, 200) + M(row-1, 2))*(1-0.04*(M(row-1, 2)-M(row-1, 200)));
+    M(row, 1) = 0.5*(M(row-1, 200) + M(row-1, 2))*(1-0.4*0.5*(M(row-1, 2)-M(row-1, 200)));
     M(row, 201) = M(row, 1);
 end
 M
@@ -31,9 +31,9 @@ end
 
 for row = 2:38
     for col = 2:5000
-        N(row, col) = 0.5*(N(row-1, col+1) + N(row-1, col-1))*(1-0.04*(N(row-1, col+1)-N(row-1, col-1)));
+        N(row, col) = 0.5*(N(row-1, col+1) + N(row-1, col-1))*(1-0.4*0.5*(N(row-1, col+1)-N(row-1, col-1)));
     end
-    N(row, 1) = 0.5*(N(row-1, 5000) + N(row-1, 2))*(1-0.04*(N(row-1, 2)-N(row-1, 5000)));
+    N(row, 1) = 0.5*(N(row-1, 5000) + N(row-1, 2))*(1-0.4*0.5*(N(row-1, 2)-N(row-1, 5000)));
     N(row, 5001) = N(row, 1);
 end
 plot(x_data_1, M(38, :), 'r', linspace(-1, 1, 5001), N(38, :), 'b')
