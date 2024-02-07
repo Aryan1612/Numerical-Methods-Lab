@@ -53,4 +53,11 @@ x_data_2 = linspace(-1, 1, n_x+1);
 y_data_2 = M(n_t+1, :);
 plot(x_data_1, y_data_1, 'r', x_data_2, y_data_2, 'b')
 
+figure;
+for k = 1:100
+    plot(x_data_1, M(k*5+1, :), 'r')
+    xlabel('x');
+    ylabel('y');
+    pause(0.1);
+end
 
