@@ -1,0 +1,16 @@
+H = zeros(100000, 501);
+U = zeros(100000, 501);
+r = zeros(1, 501);
+
+for i = 1:501
+    H(1, i) = exp(-(((i-1)/100)-2)^2/0.1);
+end
+H(1,:)
+
+for j = 1:100000
+    r = zeros(1, 501);
+    for i = 1:501
+        r(1, i) = abs(U(j, i)) + sqrt(9.81*H(j, i));
+    end
+    sr = max(r);
+    dt = sr/500
