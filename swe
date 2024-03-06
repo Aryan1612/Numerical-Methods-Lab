@@ -7,10 +7,50 @@ for i = 1:501
 end
 H(1,:)
 
+t = 0;
+dx = 1/100;
+e = 0.8;
+index = 0;
+
 for j = 1:100000
     r = zeros(1, 501);
     for i = 1:501
         r(1, i) = abs(U(j, i)) + sqrt(9.81*H(j, i));
     end
     sr = max(r);
-    dt = sr/500
+    dt = (e*dx)/sr;
+    t= t+dt;
+
+    if t > 1
+        index = j;
+        break
+    end
+
+    H(j+1, 1) = H(1, 1);
+    H(j+1, 501) = H(1, 501);
+
+    for k = 2:500    
+        H(j+1, k+1) = 0.5*(H(j, k+1)+H(j, k-1)) - 0.5/sr * (H(j, k+1) * U(j, k+1) - H(j, k-1)*U(j, k-1));
+    end
+    
+    U(j+1, 1) = U(1, 1);
+    U(j+1, 1) = U(1, 501);
+
+    for k = 2:500
+        U(j+1, k) = 0.5*(U(j, k+1)*H(j, k+1) + H(j, k-1)*U(j, k-1)) - 0.5/sr*(H(j, k+1) * U(j, k+1)^2 + 0.5*(9.81)*H(j, k+1)^2 - H(j, k-1)*U(j, k-1)^2 -0.5*9.81*H(j, k-1)^2);
+    end
+end
+
+H(index, :)
+U(index, :)
+plot(linspace(0, 5, 501), H(index, :))
+                                                                   
+
+    
+
+
+
+
+
+
+
