@@ -3,11 +3,7 @@ U = zeros(100000, 501);
 r = zeros(1, 501);
 
 for i = 1:501
-    if ((i-1)/100) >= 2.5
-        H(1, i) = 1;
-    else
-        H(1, i) = 2;
-    end
+    H(1, i) = exp((-(((i-1)/100)-2)^2)/0.1);
 end
 
 t = 0;
@@ -24,25 +20,26 @@ for j = 1:100000
     dt = (e*dx)/sr;
     t= t+dt;
 
-    H(j+1, 1) = H(1, 2);
-    H(j+1, 501) = H(1, 500);
-
-    for k = 2:500    
-        H(j+1, k) = 0.5*(H(j, k+1)+H(j, k-1)) - 0.5*e/sr * (H(j, k+1) * U(j, k+1) - H(j, k-1)*U(j, k-1));
-    end
-    
-    U(j+1, 1) = U(1, 2);
-    U(j+1, 501) = U(1, 500);
-
-    for k = 2:500
-        U(j+1, k) = (0.5*(U(j, k+1)*H(j, k+1) + H(j, k-1)*U(j, k-1)) - 0.5*e/sr*(H(j, k+1) * (U(j, k+1)^2) + 0.5*(9.81)*H(j, k+1)^2 - H(j, k-1)*(U(j, k-1))^2 -0.5*9.81*H(j, k-1)^2))/H(j+1, k);
-    end
-
     if t > 1
         index = j;
         break
     end
+
+    for k = 2:500    
+        H(j+1, k) = 0.5*(H(j, k+1)+H(j, k-1)) - 0.5*e/sr * (H(j, k+1) * U(j, k+1) - H(j, k-1)*U(j, k-1));
+    end
+
+    H(j+1, 1) = H(j+1, 2);
+    H(j+1, 501) = H(j+1, 500);
+    
+    for k = 2:500
+        U(j+1, k) = (0.5*(U(j, k+1)*H(j, k+1) + H(j, k-1)*U(j, k-1)) - 0.5*e/sr*(H(j, k+1) * (U(j, k+1)^2) + 0.5*(9.81)*H(j, k+1)^2 - H(j, k-1)*(U(j, k-1))^2 -0.5*9.81*H(j, k-1)^2))/H(j+1, k);
+    end
+
+    U(j+1, 1) = U(j+1, 2);
+    U(j+1, 501) = U(j+1, 500);
 end
 
 x_data = linspace(0, 5, 501);
-plot(x_data, H(index, :), 'red', x_data, U(index, :), "blue")
+plot(x_data, H(index, :), 'red')
+plot(x_data, U(index, :), 'blue')
