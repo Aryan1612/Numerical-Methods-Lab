@@ -43,3 +43,10 @@ end
 x_data = linspace(0, 5, 501);
 plot(x_data, H(index, :), 'red')
 plot(x_data, U(index, :), 'blue')
+
+for k = 1:index
+    plot(x_data, U(k, :), 'r')
+    xlabel('x');
+    ylabel('y');
+    pause(0.05);
+end
