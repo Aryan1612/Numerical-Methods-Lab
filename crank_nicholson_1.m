@@ -22,7 +22,7 @@ c = lambda;
 B = diag(a*ones(1,cols-2)) + diag(b*ones(1,cols-3),1) + diag(c*ones(1,cols-3),-1);
 
 for i = 2:rows
-    x = B*U(i-1, 2:cols-1)'\A;
+    x = inv(A)*B*U(i-1, 2:cols-1)';
     for j = 1:cols-2
         U(i, j+1) = x(j);
     end
