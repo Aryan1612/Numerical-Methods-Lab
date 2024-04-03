@@ -32,7 +32,8 @@ end
 
 x1 = linspace(0, pi, floor(pi/0.52)+ 1);
 y1 = linspace(0, 0.1, rows);
-surf(x1, y1, U);
+s2 = surf(x1, y1, U);
+colormap winter;
 
 
 dx = pi/50;
@@ -55,7 +56,6 @@ for i = 2:rows
 end
 x2 = linspace(0, pi, 50);
 y2 = linspace(0, 0.1, rows);
-surf(x2, y2, W)
-
-
-    
+s = surf(x2, y2, W);
+colormap hot;
+s.EdgeColor = "none";
