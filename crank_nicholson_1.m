@@ -28,7 +28,6 @@ for i = 2:rows
     end
 end
 
-
 dx = 1/50;
 dt = 0.01;
 alpha = 1/(pi^2);
@@ -48,6 +47,7 @@ for i = 2:rows
     end
 end
 
-surf(linspace(0, 1, 51), linspace(0, 0.1, 11), U)
-surf(linspace(0, 1, cols), linspace(0, 0.1, 0.1/dt + 1), W)
-    
+s1 = surf(linspace(0, 1, 51), linspace(0, 0.1, 11), U);
+s1.EdgeColor = "none";
+s2 = surf(linspace(0, 1, cols), linspace(0, 0.1, 0.1/dt + 1), W);
+s2.EdgeColor = "none";
