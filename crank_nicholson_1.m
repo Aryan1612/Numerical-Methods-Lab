@@ -1,4 +1,4 @@
-dx = 0.1;
+dx = 1/50;
 dt = 0.01;
 alpha = 1/(pi^2);
 lambda = alpha * (dt/(dx^2));
@@ -28,7 +28,6 @@ for i = 2:rows
     end
 end
 
-U
 
 dx = 1/50;
 dt = 0.01;
@@ -49,6 +48,6 @@ for i = 2:rows
     end
 end
 
-plot(linspace(0, 1, 11), U(11, :),'r', linspace(0, 1, cols), W(11, :), 'b')
-
+surf(linspace(0, 1, 51), linspace(0, 0.1, 11), U)
+surf(linspace(0, 1, cols), linspace(0, 0.1, 0.1/dt + 1), W)
     
