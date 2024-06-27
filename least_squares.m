@@ -1,4 +1,3 @@
-lesghetit 
 n = input('Enter the number of points (n): ');
 m = input('Enter the degree of the polynomial (m): ');
 
