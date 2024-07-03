@@ -35,12 +35,3 @@ This project was conducted under the supervision of Prof. Naveen Kumar Garg, foc
 ## Usage
 - Each script can be run independently in MATLAB.
 - Ensure MATLAB is configured with necessary toolboxes and dependencies as per project requirements.
-
-## Results
-- Detailed results, including accuracy metrics and graphical plots, are available in the project report.
-- Refer to the report for in-depth analysis and interpretation of numerical simulations.
-
-## Contact
-For any questions or further information, please contact:
-- **Supervisor:** Prof. Naveen Kumar Garg
-- **Email:** [email@example.com](mailto:email@example.com)
