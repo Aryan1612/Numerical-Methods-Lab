@@ -40,11 +40,9 @@ This project was conducted under the supervision of Prof. Naveen Kumar Garg, foc
 - **Usage:** MATLAB script (`crank_nicholson.m`) provides stable solutions to parabolic equations, suitable for various time-step simulations.
 
 ## Using Images for Better Understanding
-- **Approach:** Images were utilized to enhance the understanding of problem statements.
-- **Benefit:** Visual representations aided in visualizing complex mathematical concepts and numerical simulations.
-- **Examples:** Images included graphs, diagrams, and plots depicting data, equations, and simulation results.
+- **Approach:** Images have been included throughout the repository to aid in understanding complex problem statements and visualizing numerical simulations.
+- **Benefit:** Visual representations enhance comprehension of mathematical concepts and illustrate results from implemented methods.
 
 ## Code Organization
 - Each MATLAB script can be executed independently.
 - Ensure MATLAB is configured with necessary toolboxes and dependencies as per project requirements.
-
