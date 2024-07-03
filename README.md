@@ -7,31 +7,44 @@ This project was conducted under the supervision of Prof. Naveen Kumar Garg, foc
 
 ### Function Value Approximations with Natural Cubic Splines Interpolation (MATLAB)
 - **Objective:** Achieved 91% accuracy in approximating function values using natural cubic splines interpolation.
-- **Code:** Implemented in MATLAB for effective interpolation and visualization.
+- **Code:** Implemented in MATLAB (`cubic_splines_interpolation.m`) for effective interpolation and visualization.
 
 ### Solving 1D Pressureless Gas Dynamics and Shallow Water Equations (Lax-Friedrichs Scheme)
 - **Objective:** Employed Lax-Friedrichs scheme to solve 1D Pressureless Gas Dynamics and Shallow Water Equations.
-- **Achievement:** Successfully simulated and analyzed dynamics using numerical methods.
+- **Code:** Implemented in MATLAB (`gas_dynamics_solver.m`) for simulating and analyzing dynamics.
 
 ### m-degree Least Squares Method (MATLAB)
 - **Objective:** Used m-degree least squares method to achieve exceptional accuracy exceeding 94%.
-- **Code:** Implemented in MATLAB for curve fitting and data approximation.
+- **Code:** Implemented in MATLAB (`least_squares_approximation.m`) for curve fitting and data approximation.
 
 ### Boundary Value Problems (Central Difference and Shooting Methods)
 - **Objective:** Achieved 0.8% error reduction in boundary value problems.
-- **Methods Used:** Implemented central difference and shooting methods for accurate solutions.
+- **Methods Used:** Implemented central difference and shooting methods in MATLAB (`boundary_value_problems.m`) for accurate solutions.
 
 ### Solving Parabolic Equations (Crank-Nicholson Scheme)
 - **Objective:** Solved Parabolic Equations at various time steps.
-- **Code:** Utilized Crank-Nicholson scheme for numerical stability and plotted results graphically.
+- **Code:** Utilized Crank-Nicholson scheme in MATLAB (`crank_nicholson.m`) for numerical stability and graphical plotting.
+
+## Additional Files
+
+### `shallow_water_equations.m`
+- **Objective:** Implementation for solving Shallow Water Equations.
+- **Usage:** MATLAB script (`shallow_water_equations.m`) integrates numerical methods for simulating fluid dynamics in shallow water scenarios.
+
+### `secant_method.m`
+- **Objective:** Implementation of the Secant Method for root finding.
+- **Usage:** MATLAB script (`secant_method.m`) facilitates iterative root approximation with improved convergence compared to traditional methods.
+
+### `crank_nicholson.m`
+- **Objective:** Numerical method for solving parabolic equations with enhanced stability.
+- **Usage:** MATLAB script (`crank_nicholson.m`) provides stable solutions to parabolic equations, suitable for various time-step simulations.
+
+## Using Images for Better Understanding
+- **Approach:** Images were utilized to enhance the understanding of problem statements.
+- **Benefit:** Visual representations aided in visualizing complex mathematical concepts and numerical simulations.
+- **Examples:** Images included graphs, diagrams, and plots depicting data, equations, and simulation results.
 
 ## Code Organization
-- `cubic_splines_interpolation.m`: MATLAB script for natural cubic splines interpolation.
-- `gas_dynamics_solver.m`: MATLAB script implementing Lax-Friedrichs scheme for gas dynamics.
-- `least_squares_approximation.m`: MATLAB script for m-degree least squares method.
-- `boundary_value_problems.m`: MATLAB script implementing central difference and shooting methods.
-- `parabolic_equations_solver.m`: MATLAB script using Crank-Nicholson scheme for solving parabolic equations.
-
-## Usage
-- Each script can be run independently in MATLAB.
+- Each MATLAB script can be executed independently.
 - Ensure MATLAB is configured with necessary toolboxes and dependencies as per project requirements.
+
